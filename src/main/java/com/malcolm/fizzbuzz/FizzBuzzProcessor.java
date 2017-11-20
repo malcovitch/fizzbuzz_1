@@ -15,17 +15,21 @@ public class FizzBuzzProcessor {
             this.output = output;
         }
 
+        public int getDivisor() {
+            return divisor;
+        }
+
         public String getOutput() {
             return output;
         }
     }
 
     public String process(int i) {
-        if (i % (FizzBuzzEnum.FIZZ.divisor * FizzBuzzEnum.BUZZ.divisor) == 0) {
-            return FizzBuzzEnum.FIZZ.getOutput() + FizzBuzzEnum.BUZZ.output;
-        } else if (i % FizzBuzzEnum.FIZZ.divisor == 0) {
+        if (i % (FizzBuzzEnum.FIZZ.getDivisor() * FizzBuzzEnum.BUZZ.getDivisor()) == 0) {
+            return FizzBuzzEnum.FIZZ.getOutput() + FizzBuzzEnum.BUZZ.getOutput();
+        } else if (i % FizzBuzzEnum.FIZZ.getDivisor() == 0) {
             return FizzBuzzEnum.FIZZ.getOutput();
-        } else if (i % FizzBuzzEnum.BUZZ.divisor == 0) {
+        } else if (i % FizzBuzzEnum.BUZZ.getDivisor() == 0) {
             return FizzBuzzEnum.BUZZ.getOutput();
         }
         return new String() + i;
